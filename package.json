@@ -1,0 +1,13 @@
+{
+  "name": "ferheng-data",
+  "private": true,
+  "type": "module",
+  "description": "Daneyên ferhenga kurmancî–kurmancî ji Wîkîferhengê, ji bo sepana Ferheng",
+  "scripts": {
+    "build": "bunzip2 -c dump.xml.bz2 | node scripts/sections.mjs > ku-sections.jsonl && node scripts/translations.mjs ku-sections.jsonl > en.json && node scripts/fetch-images.mjs && node scripts/extract.mjs ku-sections.jsonl tewandin-verbs.json",
+    "test": "node scripts/test.mjs"
+  },
+  "dependencies": {
+    "emojibase-data": "^16.0.3"
+  }
+}
